@@ -37,7 +37,7 @@ Without this, Bluetooth owns `/dev/ttyAMA0` and pppd sees its own frames
 looped back.
 
 ```bash
-echo 'dtoverlay=disable-bt' >> /boot/config.txt
+echo 'dtoverlay=disable-bt' | sudo tee -a /boot/firmware/config.txt
 reboot
 ```
 
