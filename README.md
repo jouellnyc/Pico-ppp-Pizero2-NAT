@@ -88,11 +88,11 @@ sudo chmod +x /etc/ppp/ip-up.d/99-txqueuelen
 
 ```bash
 #!/bin/sh -e
-sysctl -p
+
 stty -F /dev/ttyAMA0 raw -echo -echoe -echok
-exec pppd /dev/ttyAMA0 115200 10.0.5.1:10.0.5.2 \
-    proxyarp local noauth nodetach dump \
-    nocrtscts passive persist maxfail 0 holdoff 1
+exec pppd /dev/ttyAMA0 115200 10.0.5.1:10.0.5.2 proxyarp local noauth debug nodetach dump nocrtscts passive persist maxfail 0 holdoff 1 mtu 1500 mru 1500
+sysctl -p
+
 ```
 
 ```bash
