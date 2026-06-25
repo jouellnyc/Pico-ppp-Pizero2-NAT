@@ -219,5 +219,5 @@ print(http_get("google.com"))
 
 - Raspberry Pi Pico W (RP2040) — MicroPython v1.29.0-preview.417
 - Raspberry Pi Pico H (RP2040) — MicroPython custom build
-- Raspberry Pi Zero 2W — Raspberry Pi OS Bookworm
+- Raspberry Pi Zero 2W — Raspberry Pi OS Trixie
 - 10/10 consecutive HTTP requests successful
