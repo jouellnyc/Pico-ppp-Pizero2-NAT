@@ -139,6 +139,7 @@ ppp = network.PPP(uart)
 ppp.connect()
 
 while not ppp.isconnected():
+    time.sleep_ms(100)
     pass
 
 print(ppp.ifconfig())
