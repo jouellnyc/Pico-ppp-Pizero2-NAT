@@ -22,7 +22,7 @@ with the Pico over three wires.
 
 ## Network Asciigram
 
-  ``` 
+```
                                   INTERNET
                                        │
                                        │ WPA2 Enterprise WiFi
@@ -40,9 +40,9 @@ with the Pico over three wires.
                               115200 baud
                               3 jumper wires
                                        │
-                         GP14 (TX) ────┤├──── GP5 (RX)
-                         GP15 (RX) ────┤├──── GP4 (TX)
-                         GND       ────┤├──── GND
+               Pi Zero GPIO14 (TX) ────┤├──── Pico GP5 (RX)
+               Pi Zero GPIO15 (RX) ────┤├──── Pico GP4 (TX)
+               Pi Zero GND        ────┤├──── Pico GND
                                        │
                               ┌────────┴────────┐
                               │  Raspberry Pi   │
@@ -52,6 +52,13 @@ with the Pico over three wires.
                               │  PPP client     │
                               │  MicroPython    │
                               └─────────────────┘
+```
+
+**Wiring (physical pins):**
+```
+Pico GP4 (TX) → Pi Zero GPIO15 (RX) — physical pin 10
+Pico GP5 (RX) → Pi Zero GPIO14 (TX) — physical pin 8
+Pico GND      → Pi Zero GND          — physical pin 6
 ```
 
 ---
@@ -167,7 +174,6 @@ ppp.connect()
 
 while not ppp.isconnected():
     time.sleep_ms(100)
-    pass
 
 print(ppp.ifconfig())
 # ('10.0.5.2', '255.255.255.255', '10.0.5.1', '8.8.8.8')
