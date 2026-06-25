@@ -20,6 +20,8 @@ with the Pico over three wires.
 - Raspberry Pi Zero 2W (Zero 1 should work too)
 - 3 jumper wires (TX, RX, GND)
 
+## Network Asciigram
+
   ``` 
                                   INTERNET
                                        │
