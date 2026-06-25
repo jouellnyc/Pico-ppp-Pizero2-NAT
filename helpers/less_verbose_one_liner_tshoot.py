@@ -13,7 +13,7 @@ Running single-line telemetry loop...
 [08] OK - Read 773 bytes | DNS: 0ms | TCP: 33ms | TTFB: 119ms | Total: 153ms | b'HTTP/1.0 301 Moved Permanently'
 [09] OK - Read 773 bytes | DNS: 0ms | TCP: 31ms | TTFB: 111ms | Total: 143ms | b'HTTP/1.0 301 Moved Permanently'
 
-""""
+"""
 
 import socket, gc, time, select, machine, network
 
