@@ -109,10 +109,10 @@ exit 0
 
 ---
 
-## Pico W — MicroPython
+## Pico H or W — MicroPython
 
 PPP support is enabled by default for Pico W in MicroPython master as of
-June 2026. Build from source or use a recent nightly.
+June 2026. Build from source or use a recent nightly. Build your on with an H (see official docs).
 
 ### Critical: rxbuf=2048 is required
 
