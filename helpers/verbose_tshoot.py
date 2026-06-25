@@ -1,3 +1,29 @@
+"""
+
+Expected Output
+
+============================================================
+[00] STARTING REQUEST
+============================================================
+  [+] DNS Resolved: 142.251.45.78 (took 29ms)
+  [+] TCP Handshake Complete (took 27ms)
+  [->] Sent Payload (36 bytes)
+  [<-] First Inbound Byte Detected (Latency/TTFB: 150ms)
+      |-- Chunk 00: Received 512 bytes (Total Buffer: 512/2048)
+      |-- Chunk 01: Received 261 bytes (Total Buffer: 773/2048)
+  [+] Clean EOF (FIN packet received from server)
+------------------------------------------------------------
+[00] SUCCESS SUMMARY:
+  * Total Bytes Gathered: 773 bytes
+  * HTTP Status Line:     b'HTTP/1.0 301 Moved Permanently'
+  * Internal Timings:
+    - DNS Resolution:     29 ms
+    - TCP Connection:     27 ms
+    - Time to First Byte: 150 ms
+    - Grand Total Time:   214 ms
+------------------------------------------------------------
+"""
+
 import socket
 import gc
 import time

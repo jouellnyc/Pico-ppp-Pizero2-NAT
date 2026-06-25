@@ -1,3 +1,19 @@
+"""
+Expected output:
+
+Running single-line telemetry loop...
+[00] OK - Read 773 bytes | DNS: 26ms | TCP: 32ms | TTFB: 118ms | Total: 177ms | b'HTTP/1.0 301 Moved Permanently'
+[01] OK - Read 773 bytes | DNS: 0ms | TCP: 35ms | TTFB: 114ms | Total: 150ms | b'HTTP/1.0 301 Moved Permanently'
+[02] OK - Read 773 bytes | DNS: 0ms | TCP: 30ms | TTFB: 118ms | Total: 149ms | b'HTTP/1.0 301 Moved Permanently'
+[03] OK - Read 773 bytes | DNS: 0ms | TCP: 32ms | TTFB: 112ms | Total: 145ms | b'HTTP/1.0 301 Moved Permanently'
+[04] OK - Read 773 bytes | DNS: 0ms | TCP: 30ms | TTFB: 121ms | Total: 152ms | b'HTTP/1.0 301 Moved Permanently'
+[05] OK - Read 773 bytes | DNS: 0ms | TCP: 32ms | TTFB: 113ms | Total: 146ms | b'HTTP/1.0 301 Moved Permanently'
+[06] OK - Read 773 bytes | DNS: 0ms | TCP: 29ms | TTFB: 110ms | Total: 140ms | b'HTTP/1.0 301 Moved Permanently'
+[07] OK - Read 773 bytes | DNS: 0ms | TCP: 29ms | TTFB: 119ms | Total: 149ms | b'HTTP/1.0 301 Moved Permanently'
+[08] OK - Read 773 bytes | DNS: 0ms | TCP: 33ms | TTFB: 119ms | Total: 153ms | b'HTTP/1.0 301 Moved Permanently'
+[09] OK - Read 773 bytes | DNS: 0ms | TCP: 31ms | TTFB: 111ms | Total: 143ms | b'HTTP/1.0 301 Moved Permanently'
+
+""""
 
 import socket, gc, time, select, machine, network
 
