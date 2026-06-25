@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A Raspberry Pi Pico W connected to the internet via a Raspberry Pi Zero 2W
+A Raspberry Pi Pico H or W connected to the internet via a Raspberry Pi Zero 2W
 acting as a PPP/NAT gateway over a UART serial link. The Pi Zero handles
 WPA2 Enterprise WiFi (or any network connection) and shares it with the
 Pico over three wires.
