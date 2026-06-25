@@ -53,13 +53,6 @@ with the Pico over three wires.
                               │  MicroPython    │
                               └─────────────────┘
 ```
-                           
-**Wiring:**
-```
-Pico GP4 (TX) to  Pi Zero GPIO15 (RX) — physical pin 10
-Pico GP5 (RX) to  Pi Zero GPIO14 (TX) — physical pin 8
-Pico GND      to  Pi Zero GND          — physical pin 6
-```
 
 ---
 
