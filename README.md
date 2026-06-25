@@ -7,16 +7,17 @@ acting as a PPP/NAT gateway over a UART serial link. The Pi Zero handles
 WPA2 Enterprise WiFi (or any network connection) and shares it with the
 Pico over three wires.
 
-## Why
+## Some Whys
 
 - Pico W cannot do WPA2 Enterprise natively
+- Pico H was never intended to connect to the network
 - PPP support landed in MicroPython rp2 master June 2026
 - Three jumper wires is all the hardware needed
 
 ## Hardware
 
-- Raspberry Pi Pico W
-- Raspberry Pi Zero 2W
+- Raspberry Pi Pico H or W
+- Raspberry Pi Zero 2W (or 1 should be fine too)
 - 3 jumper wires (TX, RX, GND)
 
 **Wiring:**
