@@ -20,6 +20,38 @@ with the Pico over three wires.
 - Raspberry Pi Zero 2W (Zero 1 should work too)
 - 3 jumper wires (TX, RX, GND)
 
+  ``` 
+                                  INTERNET
+                                       │
+                                       │ WPA2 Enterprise WiFi
+                                       │ (or any connection)
+                              ┌────────┴────────┐
+                              │  Raspberry Pi   │
+                              │   Zero 2W       │
+                              │                 │
+                              │  wlan0          │
+                              │  10.0.5.1 ◄─── │─── NAT/MASQUERADE
+                              │  ppp0           │
+                              └────────┬────────┘
+                                       │
+                              UART Serial Link
+                              115200 baud
+                              3 jumper wires
+                                       │
+                         GP14 (TX) ────┤├──── GP5 (RX)
+                         GP15 (RX) ────┤├──── GP4 (TX)
+                         GND       ────┤├──── GND
+                                       │
+                              ┌────────┴────────┐
+                              │  Raspberry Pi   │
+                              │   Pico H or W   │
+                              │                 │
+                              │  10.0.5.2       │
+                              │  PPP client     │
+                              │  MicroPython    │
+                              └─────────────────┘
+```
+                           
 **Wiring:**
 ```
 Pico GP4 (TX) → Pi Zero GPIO15 (RX) — physical pin 10
