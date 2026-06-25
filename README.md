@@ -1,4 +1,4 @@
-# Raspberry Pi Pico W — Internet via PPP over UART (Pi Zero 2W NAT)
+# Raspberry Pi Pico — Internet via PPP over UART (Pi Zero NAT)
 
 ## What This Is
 
