@@ -1,0 +1,42 @@
+# cat /boot/firmware/config.txt 
+
+# =====================================================================
+# PRISTINE RASPBERRY PI ZERO 2W PPP BRIDGE CONFIGURATION
+# Location: /boot/firmware/config.txt
+# =====================================================================
+
+# --- Core Hardware & Serial Link Realignment ---
+# Forces high-performance UART (/dev/ttyAMA0) to physical pins 8 & 10
+enable_uart=1
+dtoverlay=disable-bt
+
+# Enables USB On-The-Go Data Gadget Mode capability
+dtoverlay=dwc2
+
+# --- Base Hardware Subsystems ---
+dtparam=i2c_arm=on
+dtparam=i2s=on
+dtparam=spi=on
+dtparam=audio=on
+
+# --- Display & Graphics Pipeline ---
+dtoverlay=vc4-kms-v3d
+max_framebuffers=2
+disable_fw_kms_setup=1
+disable_overscan=1
+
+# --- System Performance & Automation ---
+arm_boost=1
+camera_auto_detect=1
+display_auto_detect=1
+auto_initramfs=1
+
+# --- Conditional Hardware Profiles ---
+[cm4]
+otg_mode=1
+
+[all]
+# Placeholder for global runtime parameters
+
+
+
