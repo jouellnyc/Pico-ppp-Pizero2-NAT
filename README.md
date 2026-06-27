@@ -162,7 +162,7 @@ your own firmware (see official MicroPython docs).
 
 The default UART receive buffer is appears to be too small for PPP HTTP responses and causes intermittent failures.
 
-### rxbuf sizing — tested values
+### UART rxbuf sizing — tested values
 
 | rxbuf | Result |
 |-------|--------|
