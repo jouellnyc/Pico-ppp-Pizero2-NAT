@@ -214,9 +214,27 @@ print(http_get("google.com"))
 
 ---
 
+## UART Baud Rate & PPP Latency
+
+The PPP link between the Pico and the Pi Zero 2W runs over UART.  Latency measurements were taken at four baud rates using a real HTTP request loop, measuring DNS resolution, TCP handshake, and time-to-first-byte independently (see helper scripts in this repo):
+
+
+```
+Baud Rate    TCP (avg)    TTFB (avg)    Total (avg)    Notes
+---------    ---------    ----------    -----------    -------------------------
+115,200      ~31ms        ~115ms        ~147ms         Default
+921,600      ~22ms        ~44ms         ~68ms          8x baud, 2.2x faster
+1,843,200    ~25ms        ~38ms         ~64ms          Recommended
+3,000,000    ~27ms        ~37ms         ~67ms          Theoretical max, no gain
+```
+
+The dominant improvement comes from the jump from 115,200 to 921,600, after which internet RTT becomes the bottleneck rather than UART serialization delay. TTFB shows the clearest correlation with baud rate as it directly reflects UART serialization of the request and response payloads. **1,843,200 baud is the recommended operating point**, offering near-optimal performance with a comfortable margin below the hardware ceiling. 3,000,000 baud is stable but yields no measurable improvement under real-world conditions.
+
+NOTE: Behavior is using helper scripts - 10/10 consecutive HTTP requests successful - not usage over a long period of time.
+
+
 ## Tested On
 
 - Raspberry Pi Pico W (RP2040) — MicroPython v1.29.0-preview.417
 - Raspberry Pi Pico H (RP2040) — MicroPython custom build
 - Raspberry Pi Zero 2W — Raspberry Pi OS Trixie
-- 10/10 consecutive HTTP requests successful
