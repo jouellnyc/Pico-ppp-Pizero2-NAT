@@ -158,12 +158,21 @@ PPP support is enabled by default for Pico W in MicroPython master as of
 June 2026. Build from source or use a recent nightly. For Pico H, build
 your own firmware (see official MicroPython docs).
 
-### Critical: rxbuf=2048 is required
+### Critical: rxbuf
 
-The default UART receive buffer is too small for PPP HTTP responses and
-causes intermittent `recv()` timeouts (~90% failure rate without this).
+The default UART receive buffer is appears to be too small for PPP HTTP responses and causes intermittent failures.
 
-### Connect
+### UART rxbuf sizing — tested values
+
+| rxbuf | Result |
+|-------|--------|
+| 256 (default) | Noted a ~90% failure rate |
+| 512 | Noted a ~40-50% failure rate |
+| 1024 | 10/10 consistent |
+| 2048 | 10/10 consistent |
+
+
+### Connect Script
 
 ```python
 import machine, network, socket, time
